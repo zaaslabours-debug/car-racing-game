@@ -10,22 +10,24 @@ Everything we need to build the game. Tick items off as we collect them.
 
 ## 🚗 1. Cars (Player + AI Opponents) — 15k–50k tris each
 
-Wheels should be separate meshes so they can spin and steer (I'll verify after upload).
+All picks are **CC-BY (commercial-safe)** — important since the game may be monetized later.
+Mostly generic/unbranded designs. Wheels should be separate meshes (I'll verify after upload).
 
-- [ ] Supercar — *Marussia (22.9k tris) picked, awaiting download*
-- [ ] Sports car — *Nissan Skyline R32 GT-R (24.6k) picked, awaiting download*
-- [ ] Sports car 2 — *Nissan 300ZX Z32 (31.3k) picked, awaiting download*
-- [ ] Muscle car — *Phoenix 455 '71 (25.9k) picked, awaiting download*
-- [ ] F1 / open-wheel — *Formula One LP-830 SDC (31.2k) picked, awaiting download*
-- [ ] Hypercar / concept — *optional: De Tomaso P72 (bonus list)*
+- [ ] Supercar — *Saba V12 '95 (24.6k tris, CC BY) picked, awaiting download*
+- [ ] Hypercar — *De Tomaso P72 (21.5k, CC BY) picked — will be renamed in-game*
+- [ ] Sports / drift car — *Tiara GT '83 Tuned (18.6k, CC BY) picked, awaiting download*
+- [ ] Muscle car — *Phoenix 455 '71 (25.9k, CC BY) picked, awaiting download*
+- [ ] F1 / open-wheel — *Formula One LP-830 SDC (31.2k, CC BY) picked, awaiting download*
+
+> ⛔ Earlier picks (Marussia, Nissan R32/300ZX by Lexyc16) were dropped — CC BY-**NC** license conflicts with possible monetization.
 
 ## 🚙 2. Traffic Vehicles
 
-- [ ] Taxi — *Canyon '75 Taxi (20.0k) picked, awaiting download*
-- [ ] Sedan — *Fairheaven LT '80 (19.7k) picked, awaiting download*
-- [ ] Police sedan — *Negotiator '80 (19.7k) picked, awaiting download*
-- [ ] Hatchback — *Fiat Punto GT (35.2k) picked, awaiting download*
-- [ ] Truck / van / bus — *to pick in round 2*
+- [ ] Taxi — *Canyon '75 Taxi (20.0k, CC BY) picked, awaiting download*
+- [ ] Sedan — *Fairheaven LT '80 (19.7k, CC BY) picked, awaiting download*
+- [ ] Police sedan — *Negotiator '80 (19.7k, CC BY) picked, awaiting download*
+- [ ] Classic sedan — *Chrysler Saratoga 1960 (17.8k, CC BY) picked — will be renamed in-game*
+- [ ] Truck / van / bus — *to pick in round 2 (Daniel Zhabotinsky's garage has some)*
 
 ## 🏙️ 3. Track & Environment
 

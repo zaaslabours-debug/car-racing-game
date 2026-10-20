@@ -1,11 +1,15 @@
-# 🚗 Medium-Poly Car Models to Download (15k–50k triangles)
+# 🚗 Medium-Poly Car Models to Download (15k–50k triangles) — Commercial-Safe Edition
 
 I researched Sketchfab's catalog through their API and **verified every car below**:
-✅ FREE download · ✅ 15,000–50,000 triangles (your medium-poly range) · ✅ game-ready style models with PBR textures
+✅ FREE download · ✅ 15,000–50,000 triangles · ✅ **CC-BY license (legal even if you monetize the game later)**
+
+> 💡 Since you might monetize the game someday, I removed all "CC BY-**NC**" (NonCommercial) cars
+> from the earlier list and replaced them with commercial-safe **CC-BY** models.
+> Most picks are *generic* (unbranded) designs — the safest choice for a commercial game.
 
 > I can't download from Sketchfab myself (it needs a login + my network is restricted),
 > so please download these and upload the ZIPs into the **`incoming-models/`** folder of this repo.
-> I'll extract, inspect, compress and wire them into the game. Instructions at the bottom. 👇
+> Instructions at the bottom. 👇
 
 ---
 
@@ -13,35 +17,44 @@ I researched Sketchfab's catalog through their API and **verified every car belo
 
 | # | Car | Triangles | Size | License | Author | Link |
 |---|-----|-----------|------|---------|--------|------|
-| 1 | **Marussia** (supercar) | 22,872 | ~1 MB | CC BY-NC | Lexyc16 | [Open on Sketchfab](https://sketchfab.com/3d-models/none-c5a45faa55174b3ea9b7ac37d6412c6c) |
-| 2 | **Nissan Skyline (R32) GT-R** | 24,612 | ~3 MB | CC BY-NC | Lexyc16 | [Open on Sketchfab](https://sketchfab.com/3d-models/none-8810e677eca543a6b840cf67dd064aa4) |
-| 3 | **Nissan Fairlady 300ZX (Z32)** | 31,339 | ~3 MB | CC BY-NC | Lexyc16 | [Open on Sketchfab](https://sketchfab.com/3d-models/none-8c04336a4ed84f6f836760db8256f9f0) |
+| 1 | **Saba V12 '95** (Italian-style supercar ⭐ hero car) | 24,552 | ~13 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-3ab977050c334c13b6abb5de078b4957) |
+| 2 | **De Tomaso P72 2020** (hypercar) | 21,496 | ~17 MB | CC BY | ROH3D | [Open on Sketchfab](https://sketchfab.com/3d-models/none-ab85c302e652492196b600ee1eb7106a) |
+| 3 | **Tiara GT '83 Tuned** (JDM drift sports car) | 18,553 | ~11 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-59a0eaaa2af144b2956957e7032d0221) |
 | 4 | **Phoenix 455 '71** (American muscle) | 25,947 | ~12 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-955edc733c6d44fabc0ad7c246a15896) |
 | 5 | **Formula One LP-830 SDC** (F1 car) | 31,180 | ~3 MB | CC BY | SDC PERFORMANCE™️ | [Open on Sketchfab](https://sketchfab.com/3d-models/none-aeebdfa53e294e0390f3c2e8bbfe31b6) |
 | 6 | **Canyon '75 Taxi** (traffic) | 20,037 | ~12 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-9e8f92a215784f3d8aaaaeab1bef54c4) |
 
-These 6 give us: hero supercar + 2 JDM sports cars + muscle car + F1 special + first traffic car. Enough to build the whole game around. 🏁
+These 6 give us: hero supercar + hypercar + drift sports car + muscle car + F1 special + first traffic car. Enough to build the whole game around. 🏁
 
-## 🚙 More Verified Picks (traffic / variety — download if you like them)
+## 🚙 More Verified Picks (traffic variety — grab them too if you can)
 
 | Car | Triangles | Size | License | Author | Link |
 |-----|-----------|------|---------|--------|------|
 | **Negotiator '80** (police-style sedan) | 19,747 | ~11 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-892b2684fb37442299bfad9222cf331c) |
 | **Fairheaven LT '80** (sedan) | 19,709 | ~16 MB | CC BY | Daniel Zhabotinsky | [Open on Sketchfab](https://sketchfab.com/3d-models/none-e2678da920cc4be68dbc193727919ffb) |
-| **1995 Fiat Punto GT** (hatchback) | 35,168 | ⚠️ ~30 MB | CC BY | Lionsharp Studios | [Open on Sketchfab](https://sketchfab.com/3d-models/none-48db6facb4b64e99b60f36b8c01185e1) |
+| **Chrysler Saratoga 1960** (classic sedan) | 17,764 | ~13 MB | CC BY | ROH3D | [Open on Sketchfab](https://sketchfab.com/3d-models/none-3fa89e6bf78b49aab111af4195efb6fe) |
 
-⚠️ **Fiat Punto GT warning:** its ZIP is ~30 MB (4K textures) and GitHub's web upload limit is 25 MB per file — the browser upload will likely fail. Either skip this one, or upload it with GitHub Desktop / git. All other picks fit fine.
+## 🏔️ Bonus Environment (optional, later)
 
-## 🔍 Bonus (in range, spotted during research — optional extras)
+| Model | Triangles | Size | License | Author | Link |
+|-------|-----------|------|---------|--------|------|
+| **Snowy Mountain Road Scene** | 34,778 | ⚠️ ~36 MB | CC BY | 99.Miles | [Open on Sketchfab](https://sketchfab.com/3d-models/none-504729dd1afc4ff0a7dd17687ccd71a1) |
 
-- De Tomaso P72 2020 (hypercar) — https://sketchfab.com/3d-models/none-ab85c302e652492196b600ee1eb7106a
-- 2001 Crown Victoria Taxi — https://sketchfab.com/3d-models/none-2429a825ff1646568e8e6e1453f9c501
-- Fairheaven SW '84 (station wagon, traffic) — https://sketchfab.com/3d-models/none-aa0becb6e854422596cac6b21bf79787
-- GMC Motorhome (big traffic vehicle) — https://sketchfab.com/3d-models/none-6hiH0iyDqXqtdD9wbqSbyLLhKmz
+⚠️ The snowy scene's ZIP is ~34 MB — GitHub's *web* upload limit is 25 MB, so this one needs GitHub Desktop/git (or skip it; our main track will be procedural anyway).
 
-**Want even more cars?** These two authors have big game-ready garages — browse with the "Downloadable" filter and check the triangle count on each model page (keep it 15k–50k):
-- Lexyc16 → https://sketchfab.com/Lexyc16/models
-- Daniel Zhabotinsky → https://sketchfab.com/DanielZhabotinsky/models
+## 🔍 Want Even More Cars?
+
+These two authors are goldmines of commercial-safe, game-ready cars (their "low poly" naming is misleading — most are actually in our 15k–50k sweet spot). Browse with the **Downloadable** filter and check each page shows **15k–50k triangles** + **CC Attribution** license:
+- Daniel Zhabotinsky → https://sketchfab.com/DanielZhabotinsky/models (generic cars, explicit "use as you see fit" permission)
+- ROH3D → https://sketchfab.com/roh3d/models
+
+## ⛔ Do NOT Download These (checked, rejected)
+
+| Model | Why rejected |
+|---|---|
+| Marussia, Nissan R32 GT-R, Nissan 300ZX, Toyota Supra A80 (Lexyc16), Nissan GT-R (iSteven) | **CC BY-NC** — illegal to use if you monetize |
+| 1995 Fiat Punto GT (Lionsharp) | ~30 MB ZIP (over upload limit) + real Fiat branding |
+| Koenigsegg Agera RS (RongstadJ) | 48k tris but **50 MB** / 102 textures — way too heavy for web |
 
 ---
 
@@ -58,9 +71,10 @@ Then I will: extract the ZIPs → verify triangle counts & check wheels are sepa
 
 ## ⚖️ License Notes (important, quick read)
 
-- **CC BY** = free for anything, just credit the author (I'll maintain a CREDITS file in the game).
-- **CC BY-NC** (the three Lexyc16 cars) = free for **non-commercial** use with credit. Perfect while the game is free/personal. If you ever plan to monetize the game (ads, paid, etc.), tell me — I'll find CC-BY/CC0 replacements for those three.
-- Real car brand names (Nissan, etc.) belong to their companies — another reason to keep the game non-commercial or rebrand cars in-game later.
+- **CC BY** = free for anything *including commercial*, just credit the author (I'll maintain a CREDITS file in the game). Every car on this list is CC BY. ✔️
+- **CC BY-NC** = NonCommercial — **banned from our list** since you may monetize.
+- Two picks are real-world designs (**De Tomaso P72**, **Chrysler Saratoga**) — the *models* are CC BY, but car brand names/designs are trademarks of their companies. Standard indie solution: I'll **rename them in-game** (e.g. "Veloce P72", "Saratoga Classic") and we never use the real brand names in marketing. The other 7 cars are fully generic — zero risk.
+- Daniel Zhabotinsky additionally writes on every model: *"I unconditionally give you permission to use this model at your discretion, modify it or implement it into a digital product."* — as safe as it gets. 🛡️
 
 ## 🏪 About Fab.com
 
