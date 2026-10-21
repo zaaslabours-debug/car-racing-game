@@ -58,13 +58,55 @@ These two authors are goldmines of commercial-safe, game-ready cars (their "low 
 
 ---
 
-## 📥 How to Download & Upload (2 minutes per car)
+## 🏁 Tracks & Environments (100k–200k tris, GLB)
+
+Researched the same way (verified via Sketchfab API). Honest finding: in the 100k–200k range,
+free downloadable tracks are mostly **(a)** flat-shaded stylized circuits or **(b)** rips from
+commercial games. There is no perfect "original + realistic + Asphalt-style" free track — so we
+combine three sources (see below).
+
+### ✅ Commercial-safe (original work)
+
+| Model | Triangles | GLB size | License | Author | Link |
+|-------|-----------|----------|---------|--------|------|
+| **Lowpoly Racetrack** (full closed circuit — ignore the name, it's 106k tris; flat-color stylized look) | 106,212 | ~8 MB | CC BY | FSkala | [Open on Sketchfab](https://sketchfab.com/3d-models/none-a2bd81e85612454c8f978f38f1aae0f2) |
+
+### ⚠️ Realistic, but ripped from commercial games — OK for private prototyping, NOT safe if monetized
+
+| Model | Triangles | GLB size | Source game | Link |
+|-------|-----------|----------|-------------|------|
+| **Burnout 3 – Silver Lake** (full street circuit) | 179,230 | ~18 MB | Burnout 3 (EA) | [Open on Sketchfab](https://sketchfab.com/3d-models/none-b6bd3c3286cc44129cd4005f721359bd) |
+| **Sports Car Racing Moscow** (city track) | 113,884 | ~12 MB | likely a game rip | [Open on Sketchfab](https://sketchfab.com/3d-models/none-f2fd92c86b254335bdf9e05a4f58e0af) |
+| **Monza Circuit 1998 layout** (real F1 circuit) | 151,552 | ⚠️ ~49 MB | Assetto Corsa (Kunos) | [Open on Sketchfab](https://sketchfab.com/3d-models/none-01ee75b53e6d4e2895b6f69ea9cb4f5c) |
+
+> Uploaders marked these "CC BY", but the underlying content belongs to EA/Kunos — not theirs to license.
+> ⚠️ Monza GLB (~49 MB) also exceeds GitHub's 25 MB web-upload limit (needs GitHub Desktop/git).
+> ❌ Rejected: "New York Highway Interstate 95" — 112k tris but a **122 MB** GLB. Far too heavy for browser.
+
+### 🎨 Track concept images → generate GLBs with Tripo AI
+
+Since no perfect original track exists for free, I generated 3 diorama reference images
+(in this repo, folder **`reference-images/`**):
+
+| Image | Theme |
+|-------|-------|
+| `city-circuit-sunset.jpg` | Sunset city circuit with skyscrapers + big jump ramp |
+| `coastal-circuit.jpg` | Coastal circuit — cliffs, beach, lighthouse, hairpins |
+| `neon-city-circuit.jpg` | Tokyo-style neon night street circuit |
+
+➡️ Download them from GitHub → feed to **Tripo AI** (image-to-3D) → export **GLB** → upload to `incoming-models/`.
+I'll then check scale/collisions and integrate. (The main drivable road will also be built procedurally
+in code as a guaranteed-clean racing line — generated/downloaded tracks become extra maps & dressing.)
+
+---
+
+## 📥 How to Download & Upload (2 minutes per model)
 
 1. **Create a free Sketchfab account** (needed to download) → https://sketchfab.com
-2. Open a car link above → click **Download 3D Model** → choose **glTF** format
-   (⚠️ NOT "USDZ", NOT "Original format" — glTF is what our game engine eats). You'll get a `.zip` file.
+2. Open a link above → click **Download 3D Model** → choose **GLB** format (single `.glb` file — easiest).
+   If GLB isn't offered, choose **glTF** (you'll get a `.zip` — also fine). ⚠️ Never "USDZ" or "Original format".
 3. Open this GitHub repo → switch branch to **`arena/f157b2e5-car-racing-game`** (branch dropdown, top-left of file list)
-4. Open the **`incoming-models`** folder → **Add file → Upload files** → drag the `.zip` file(s) in — **don't unzip them** → **Commit changes**
+4. Open the **`incoming-models`** folder → **Add file → Upload files** → drag the `.glb` file(s) (or `.zip`s, don't unzip) → **Commit changes**
 5. Come back here and tell me: **"models uploaded"** ✅
 
 Then I will: extract the ZIPs → verify triangle counts & check wheels are separate parts → fix scale/orientation → compress the textures (most of these cars shrink 3–4×, e.g. 12 MB → ~3 MB, with no visible quality loss) → organize them into `public/models/` → add author credits → start building Phase 1. 🎮
