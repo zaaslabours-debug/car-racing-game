@@ -1,0 +1,18 @@
+{
+  "name": "car-racing-game",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0",
+    "three-mesh-bvh": "^0.7.8"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}

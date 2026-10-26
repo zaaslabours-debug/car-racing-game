@@ -1,0 +1,104 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0b0f16; }
+body { font-family: 'Rajdhani', system-ui, sans-serif; color: #fff; }
+#app, #app canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+.hidden { display: none !important; }
+
+/* ---------- speed vignette ---------- */
+#speedlines {
+  position: fixed; inset: 0; pointer-events: none; z-index: 5; opacity: 0;
+  background: radial-gradient(ellipse at center, transparent 52%, rgba(190,230,255,.18) 82%, rgba(255,255,255,.4) 100%);
+  transition: opacity .18s linear;
+}
+
+/* ---------- HUD ---------- */
+#hud { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+.brand { position: absolute; top: 18px; left: 22px; transform: skewX(-8deg); }
+.brand-title { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: 2px; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+.brand-title span { color: #ffb02e; }
+.brand-sub { font-size: 12px; font-weight: 700; letter-spacing: 3px; color: #9fd8ff; margin-top: 2px; }
+
+.top-actions { position: absolute; top: 18px; right: 20px; display: flex; gap: 8px; pointer-events: auto; }
+.chip {
+  font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  color: #dff3ff; background: rgba(10,20,34,.55); border: 1px solid rgba(140,210,255,.45);
+  padding: 9px 13px; border-radius: 4px; cursor: pointer; transform: skewX(-8deg);
+  backdrop-filter: blur(4px);
+}
+.chip:hover { background: rgba(30,90,150,.65); }
+
+#msg {
+  position: absolute; top: 34%; left: 50%; transform: translate(-50%,-50%) skewX(-8deg);
+  font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(52px, 11vw, 118px);
+  color: #fff; text-shadow: 0 0 26px rgba(255,150,40,.85), 0 4px 0 rgba(0,0,0,.35);
+  opacity: 0; transition: opacity .25s; letter-spacing: 4px; white-space: nowrap;
+}
+#offtrack {
+  position: absolute; top: 92px; left: 50%; transform: translateX(-50%) skewX(-8deg);
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 3px;
+  color: #ffd34d; background: rgba(60,32,0,.45); border: 1px solid rgba(255,200,60,.5);
+  padding: 6px 16px; border-radius: 4px;
+}
+
+.nitro-wrap { position: absolute; left: 24px; bottom: 26px; width: min(340px, 42vw); transform: skewX(-10deg); }
+.nitro-label { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 17px; letter-spacing: 3px; color: #7fe3ff; display: flex; justify-content: space-between; text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+.nitro-bar { height: 18px; margin-top: 6px; background: rgba(8,18,30,.65); border: 1px solid rgba(127,227,255,.55); border-radius: 3px; overflow: hidden; }
+#nitro-fill { height: 100%; width: 60%; background: linear-gradient(90deg, #0e7dd8, #43d9ff 60%, #b6f4ff); box-shadow: 0 0 14px rgba(67,217,255,.8); transition: width .08s linear; }
+#nitro-fill.boosting { background: linear-gradient(90deg, #ff5a1f, #ffb02e 60%, #ffe9a8); box-shadow: 0 0 20px rgba(255,140,40,.95); }
+#nitro-fill.full { animation: pulse .6s infinite alternate; }
+@keyframes pulse { from { filter: brightness(1); } to { filter: brightness(1.5); } }
+.nitro-hint { margin-top: 6px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: rgba(220,240,255,.75); }
+.nitro-hint b { color: #ffb02e; }
+
+.speed-wrap { position: absolute; right: 26px; bottom: 22px; text-align: right; transform: skewX(-10deg); }
+.speed-row { display: flex; align-items: baseline; gap: 8px; justify-content: flex-end; }
+#speed-val { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(52px, 8vw, 84px); line-height: .95; text-shadow: 0 3px 16px rgba(0,0,0,.65); }
+.speed-unit { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: #9fd8ff; }
+.rpm-bar { height: 7px; width: min(280px, 38vw); margin: 7px 0 5px auto; background: rgba(8,18,30,.65); border: 1px solid rgba(159,216,255,.4); border-radius: 3px; overflow: hidden; }
+#rpm-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #35e08a, #ffd34d 65%, #ff4747); transition: width .06s linear; }
+.car-name { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; color: #ffb02e; }
+
+.help { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: rgba(220,240,255,.65); text-shadow: 0 1px 6px rgba(0,0,0,.8); }
+.help b { color: #fff; }
+@media (max-width: 760px) { .help { display: none; } .brand-title { font-size: 19px; } }
+
+/* ---------- touch controls ---------- */
+#touch { position: fixed; inset: auto 0 0 0; z-index: 11; display: none; justify-content: space-between; padding: 0 14px 92px; pointer-events: none; }
+@media (pointer: coarse) { #touch.on { display: flex; } }
+.touch-left, .touch-right { display: flex; gap: 10px; align-items: flex-end; pointer-events: auto; }
+.tbtn {
+  width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(160,220,255,.6);
+  background: rgba(10,22,38,.55); color: #eaf7ff; font-family: 'Orbitron', sans-serif;
+  font-size: 15px; font-weight: 700; backdrop-filter: blur(3px); touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.tbtn:active { background: rgba(40,120,200,.7); }
+.tbtn-nitro { border-color: rgba(255,176,46,.8); color: #ffd34d; font-size: 12px; }
+.tbtn-gas { width: 78px; height: 78px; font-size: 20px; }
+
+/* ---------- start overlay ---------- */
+#overlay {
+  position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 120%, rgba(255,120,40,.28), transparent 55%), linear-gradient(180deg, rgba(4,10,20,.82), rgba(4,10,20,.94));
+  backdrop-filter: blur(3px); padding: 18px;
+}
+.panel { max-width: 640px; width: 100%; text-align: center; transform: skewX(-4deg); }
+.ov-kicker { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 6px; color: #7fe3ff; }
+.panel h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(42px, 9vw, 76px); letter-spacing: 3px; margin: 8px 0 4px; text-shadow: 0 0 34px rgba(255,150,40,.35); }
+.panel h1 span { color: #ffb02e; }
+.ov-sub { font-size: 17px; font-weight: 600; letter-spacing: 1px; color: rgba(220,240,255,.85); }
+.ov-controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 26px 0 20px; }
+.ov-controls div { background: rgba(12,24,42,.6); border: 1px solid rgba(127,227,255,.28); border-radius: 6px; padding: 10px 6px; }
+.ov-controls b { display: block; font-family: 'Orbitron', sans-serif; font-size: 14px; color: #ffd34d; letter-spacing: 1px; }
+.ov-controls span { font-size: 13px; font-weight: 600; color: rgba(220,240,255,.8); letter-spacing: .5px; }
+.load-wrap { margin: 8px auto 18px; max-width: 440px; }
+.load-bar { height: 10px; background: rgba(255,255,255,.1); border: 1px solid rgba(127,227,255,.4); border-radius: 5px; overflow: hidden; }
+#load-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #0e7dd8, #43d9ff); transition: width .2s; }
+#load-text { margin-top: 7px; font-size: 13.5px; font-weight: 600; letter-spacing: 1.5px; color: rgba(220,240,255,.75); }
+#start-btn {
+  font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 21px; letter-spacing: 3px;
+  color: #1a0e02; background: linear-gradient(180deg, #ffd34d, #ff8a1f); border: none; border-radius: 6px;
+  padding: 16px 46px; cursor: pointer; box-shadow: 0 6px 30px rgba(255,140,40,.45); transform: skewX(-8deg);
+}
+#start-btn:disabled { filter: grayscale(.8) brightness(.6); cursor: wait; box-shadow: none; }
+#start-btn:not(:disabled):hover { filter: brightness(1.1); }
+#err { margin-top: 14px; color: #ff7b72; font-size: 14px; font-weight: 600; white-space: pre-wrap; }
