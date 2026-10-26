@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Silver Lake GP — Racing Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- speed vignette overlay -->
+    <div id="speedlines"></div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="brand">
+        <div class="brand-title">SILVER LAKE <span>GP</span></div>
+        <div class="brand-sub">PROTOTYPE BUILD 0.1 · FREE ROAM</div>
+      </div>
+
+      <div class="top-actions">
+        <button id="btn-cam" class="chip" title="Change camera (C)">📷 CAM</button>
+        <button id="btn-reset" class="chip" title="Reset car (R)">↺ RESET</button>
+        <button id="btn-sound" class="chip" title="Mute (M)">🔊 SOUND</button>
+      </div>
+
+      <div id="offtrack" class="hidden">⚠️ OFF TRACK</div>
+      <div id="msg"></div>
+
+      <div class="nitro-wrap">
+        <div class="nitro-label">NITRO <span id="nitro-pct">60%</span></div>
+        <div class="nitro-bar"><div id="nitro-fill"></div></div>
+        <div class="nitro-hint">HOLD <b>SHIFT</b> TO BOOST · DRIFT TO REFILL</div>
+      </div>
+
+      <div class="speed-wrap">
+        <div class="speed-row"><span id="speed-val">0</span><span class="speed-unit">KM/H</span></div>
+        <div class="rpm-bar"><div id="rpm-fill"></div></div>
+        <div class="car-name">SABA V12 '95</div>
+      </div>
+
+      <div class="help">
+        <b>W A S D / ←↑↓→</b> drive &nbsp;·&nbsp; <b>SPACE</b> drift &nbsp;·&nbsp; <b>SHIFT</b> nitro<br />
+        <b>C</b> camera &nbsp;·&nbsp; <b>R</b> reset &nbsp;·&nbsp; <b>T</b> teleport &nbsp;·&nbsp; <b>M</b> mute
+      </div>
+    </div>
+
+    <!-- Touch controls -->
+    <div id="touch" class="hidden">
+      <div class="touch-left">
+        <button class="tbtn" data-k="left">◀</button>
+        <button class="tbtn" data-k="right">▶</button>
+      </div>
+      <div class="touch-right">
+        <button class="tbtn tbtn-nitro" data-k="nitro">NITRO</button>
+        <button class="tbtn" data-k="drift">DRIFT</button>
+        <button class="tbtn" data-k="brake">▼</button>
+        <button class="tbtn tbtn-gas" data-k="gas">▲</button>
+      </div>
+    </div>
+
+    <!-- Start overlay -->
+    <div id="overlay">
+      <div class="panel">
+        <div class="ov-kicker">ASPHALT-STYLE ARCADE RACER</div>
+        <h1>SILVER LAKE <span>GP</span></h1>
+        <p class="ov-sub">Prototype 0.1 — Saba V12 '95 · Silver Lake circuit · nitro + drift physics</p>
+        <div class="ov-controls">
+          <div><b>W / ↑</b><span>Accelerate</span></div>
+          <div><b>S / ↓</b><span>Brake / Reverse</span></div>
+          <div><b>A D / ← →</b><span>Steer</span></div>
+          <div><b>SPACE</b><span>Drift</span></div>
+          <div><b>SHIFT</b><span>Nitro boost</span></div>
+          <div><b>C / R / T</b><span>Camera · Reset · Teleport</span></div>
+        </div>
+        <div class="load-wrap">
+          <div class="load-bar"><div id="load-fill"></div></div>
+          <div id="load-text">Loading track & car…</div>
+        </div>
+        <button id="start-btn" disabled>START ENGINE</button>
+        <div id="err"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
