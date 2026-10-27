@@ -101,4 +101,12 @@ body { font-family: 'Rajdhani', system-ui, sans-serif; color: #fff; }
 }
 #start-btn:disabled { filter: grayscale(.8) brightness(.6); cursor: wait; box-shadow: none; }
 #start-btn:not(:disabled):hover { filter: brightness(1.1); }
+.dl-row { margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.dl-btn {
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 13.5px; letter-spacing: 1.5px;
+  color: #aee9ff; background: rgba(12,32,56,.75); border: 1px solid rgba(127,227,255,.55); border-radius: 6px;
+  padding: 11px 20px; text-decoration: none; transform: skewX(-8deg); transition: filter .15s, background .15s;
+}
+.dl-btn:hover { background: rgba(20,60,100,.9); filter: brightness(1.15); }
+.dl-btn.alt { color: rgba(210,235,255,.75); border-color: rgba(160,200,230,.35); }
 #err { margin-top: 14px; color: #ff7b72; font-size: 14px; font-weight: 600; white-space: pre-wrap; }

@@ -2,3 +2,6 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# local download artifacts (served by dev preview, not for git)
+public/*.zip
