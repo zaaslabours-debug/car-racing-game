@@ -18,6 +18,8 @@ def add_dir(zf, root, arc_prefix="", skip=()):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in skip]
         for f in filenames:
+            if f.lower().endswith(".zip"):
+                continue  # never pack zips inside zips (public/ holds preview copies)
             full = os.path.join(dirpath, f)
             rel = os.path.relpath(full, root)
             zf.write(full, os.path.join(arc_prefix, rel) if arc_prefix else rel)
