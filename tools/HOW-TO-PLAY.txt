@@ -1,0 +1,53 @@
+SILVER LAKE GP - Prototype 0.1 (ready-to-play build)
+=====================================================
+
+HOW TO PLAY (easy way - no commands!)
+--------------------------------------
+WINDOWS : double-click  PLAY-WINDOWS.bat   -> the game opens in your browser.
+MAC     : right-click   play-mac-linux.sh  -> Open With -> Terminal.
+LINUX   : run           ./play-mac-linux.sh  in a terminal.
+
+Keep the black server window OPEN while you play. Close it to stop the game.
+
+(Why is this needed? Browsers refuse to load 3D models from a plain
+ double-clicked file, so the launcher starts a tiny local web server.
+ Python or Node.js must be installed - both are free. If the launcher
+ says they are missing, install Python from https://www.python.org/downloads/
+ and tick "Add python.exe to PATH" during install.)
+
+Manual way (if you prefer commands)
+-----------------------------------
+Open a terminal IN THIS FOLDER (the one containing index.html) and run:
+  Windows : py -m http.server 8080
+  Mac/Linux: python3 -m http.server 8080
+Then open http://localhost:8080 in your browser. Leave the terminal open!
+
+Play online / on a phone (no install at all)
+--------------------------------------------
+Drag this whole folder onto https://app.netlify.com/drop and open the link you get.
+
+TROUBLESHOOTING
+---------------
+* "This site can't be reached / ERR_CONNECTION_REFUSED":
+  The server window is closed or never started. Run the launcher again,
+  keep its window open, then refresh the browser with F5.
+* Browser opened before the server was ready: wait 3 seconds, press F5.
+* Blue popup "Windows protected your PC" when opening the .bat file:
+  click "More info" -> "Run anyway". (It is a plain-text script -
+  you can right-click it and choose Edit to read every line.)
+* Firewall asks about Python: click "Allow".
+* "Address already in use": port 8080 is busy. Close other server
+  windows (or run:  py -m http.server 8000  and open http://localhost:8000).
+
+CONTROLS
+--------
+  W A S D / Arrow keys ... drive
+  SPACE .................. drift (refills nitro)
+  SHIFT .................. nitro boost
+  C ...................... camera (chase / close / hood)
+  R ...................... reset car
+  T ...................... teleport to next spawn
+  M ...................... mute
+  Touch controls appear automatically on mobile.
+
+Enjoy the ride!

@@ -50,3 +50,14 @@ Touch controls appear automatically on mobile.
 - Audio: Kenney (CC0)
 
 Full asset research: see [DOWNLOAD_MODELS.md](DOWNLOAD_MODELS.md) and [ASSETS.md](ASSETS.md).
+
+---
+
+## 🎮 NEW: Godot Edition (full build, mobile + PC)
+
+The full game now also exists as a **Godot 4.2.2-stable** project in [`godot/`](godot/):
+premium Asphalt-style splash + home + garage (3 cars), career sprints vs AI,
+TouchDrive mobile controls + keyboard/gamepad, owner popup on launch.
+
+Open `godot/project.godot` with **Godot 4.2.2-stable** and press **F5**. Full setup +
+Android APK export guide: [godot/README.md](godot/README.md).
